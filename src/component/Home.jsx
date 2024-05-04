@@ -20,7 +20,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="min-h-full sm:mt-[145px] mt-[114px]">
+    <div className="min-h-full sm:mt-[145px]">
       <TotalCards
         movieType={{ type: movie, gen: sec }}
         selectData={movSelectData}

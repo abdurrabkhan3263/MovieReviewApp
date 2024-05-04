@@ -57,7 +57,7 @@ function Nav() {
   }, [searchVal]);
 
   return (
-    <div className="bg-black sm:py-4 sm:px-6 fixed w-full z-50 flex justify-center sm:shadow-none shadow-md ">
+    <div className="bg-black sm:py-4 sm:px-6 static sm:fixed w-full z-50 flex justify-center sm:shadow-none shadow-md ">
       <div
         className={`h-screen w-3/4 bg-gray-500 absolute ${
           navSlider && navSlider ? "left-0" : "left-[-100%]"
@@ -118,8 +118,8 @@ function Nav() {
       </div>
       <div className="sm:hidden flex flex-col w-full items-center mb-4">
         <div>
-          <NavLink to="/" className="mt-4 mb-4 flex justify-center">
-            <img src={logo} alt="logo" width="95%" />
+          <NavLink to="/" className="mt-12 mb-8 flex justify-center">
+            <img src={logo} alt="logo" width="85%" />
           </NavLink>
         </div>
         <form

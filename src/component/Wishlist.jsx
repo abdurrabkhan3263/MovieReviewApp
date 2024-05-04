@@ -25,7 +25,7 @@ function Wishlist() {
   }
 
   return (
-    <div className="px-2 mt-[135px]">
+    <div className="px-2 sm:mt-[135px]">
       <div className="text-white text-3xl font-bold bg-red-500 text-center py-3 rounded-t-md">
         Wishlist
       </div>

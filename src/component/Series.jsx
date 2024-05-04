@@ -16,7 +16,7 @@ function Series() {
     setNavSlider(false);
   }, []);
   return (
-    <div className="min-h-full sm:mt-[145px] mt-[114px]">
+    <div className="min-h-full sm:mt-[145px]">
       <TotalCards
         movieType={{ type: "tv", gen: "/on_the_air" }}
         selectData={tvSelectData}

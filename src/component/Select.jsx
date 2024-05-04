@@ -4,10 +4,6 @@ import { useWishCont } from "../context/wishlistContext";
 
 function Select({ data = [], onChange, className }, ref) {
   const { selectVal } = useWishCont();
-
-  useEffect(() => {
-    console.log(selectVal);
-  }, [selectVal]);
   return (
     <div className={`w-full flex justify-end ${className}`}>
       <select

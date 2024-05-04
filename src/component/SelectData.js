@@ -8,7 +8,7 @@ const movSelectData = [
     value: 28,
   },
   {
-    selectValue: "Abenteuer",
+    selectValue: "Adventure",
     value: 12,
   },
   {
@@ -16,15 +16,15 @@ const movSelectData = [
     value: 16,
   },
   {
-    selectValue: "Komödie",
+    selectValue: "Comedy",
     value: 35,
   },
   {
-    selectValue: "Krimi",
+    selectValue: "Crime",
     value: 80,
   },
   {
-    selectValue: "Dokumentarfilm",
+    selectValue: "Documentary",
     value: 99,
   },
   {
@@ -32,7 +32,7 @@ const movSelectData = [
     value: 18,
   },
   {
-    selectValue: "Familie",
+    selectValue: "Family",
     value: 10751,
   },
   {
@@ -40,7 +40,7 @@ const movSelectData = [
     value: 14,
   },
   {
-    selectValue: "Historie",
+    selectValue: "History",
     value: 36,
   },
   {
@@ -48,7 +48,7 @@ const movSelectData = [
     value: 27,
   },
   {
-    selectValue: "Musik",
+    selectValue: "Music",
     value: 10402,
   },
   {
@@ -56,7 +56,7 @@ const movSelectData = [
     value: 9648,
   },
   {
-    selectValue: "Liebesfilm",
+    selectValue: "Romance",
     value: 10749,
   },
   {
@@ -64,7 +64,7 @@ const movSelectData = [
     value: 878,
   },
   {
-    selectValue: "TV-Film",
+    selectValue: "TV Movie",
     value: 10770,
   },
   {
@@ -72,7 +72,7 @@ const movSelectData = [
     value: 53,
   },
   {
-    selectValue: "Kriegsfilm",
+    selectValue: "War",
     value: 10752,
   },
   {
@@ -95,15 +95,15 @@ const tvSelectData = [
     value: 16,
   },
   {
-    selectValue: "Komödie",
+    selectValue: "Comedy",
     value: 35,
   },
   {
-    selectValue: "Krimi",
+    selectValue: "Crime",
     value: 80,
   },
   {
-    selectValue: "Dokumentarfilm",
+    selectValue: "Documentary",
     value: 99,
   },
   {
@@ -111,7 +111,7 @@ const tvSelectData = [
     value: 18,
   },
   {
-    selectValue: "Familie",
+    selectValue: "Family",
     value: 10751,
   },
   {

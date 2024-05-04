@@ -10,7 +10,7 @@ function Movies() {
     setNavSlider(false);
   }, []);
   return (
-    <div className="min-h-full mt-[140px]">
+    <div className="min-h-full sm:mt-[145px]">
       <p
         className={
           "text-red-600 sm:text-2xl text-xl font-bold mb-4 ml-4 px-4 py-1 rounded-md select-none bg-white w-fit"

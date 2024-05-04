@@ -60,8 +60,8 @@ function Search() {
   };
 
   return (
-    <div className="sm:mt-[140px] mt-[114px]">
-      <div className="w-full flex justify-end pb-5 text-white sm:mt-[90px] mt-5">
+    <div className="sm:mt-[140px]">
+      <div className="w-full flex justify-end pb-5 text-white sm:mt-[90px]">
         <Select onChange={(e) => callingSelect(e.target.value)} />
       </div>
       {error.occurred ? (

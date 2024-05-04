@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Nav } from "./component/index.js";
 import { ContextProvider } from "./context/wishlistContext.js";
 import { useEffect, useState } from "react";
+import { BiArrowFromBottom, BiArrowFromTop } from "react-icons/bi";
 
 function App() {
   const [wishListData, setWishList] = useState([]);
@@ -63,6 +64,13 @@ function App() {
     });
   };
 
+  const handleGoToTop = () => {
+    scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <ContextProvider
       value={{
@@ -81,10 +89,16 @@ function App() {
         setNavSlider,
       }}
     >
+      <div
+        className="w-[50px] h-[50px] bg-opacity-25 text-3xl text-gray-800 flex justify-center items-center bg-white backdrop-blur-lg  rounded-full fixed bottom-[10px] right-[10px] z-50 outline outline-1 outline-white"
+        onClick={handleGoToTop}
+      >
+        <BiArrowFromBottom />
+      </div>
       <div className="w-screen">
         <Nav />
       </div>
-      <div className="pt-24 sm:px-6 bg-black min-h-screen ">
+      <div className="sm:pt-24 sm:px-6 bg-black min-h-screen ">
         <Outlet />
       </div>
     </ContextProvider>

@@ -25,6 +25,7 @@ function TotalCards({ movieType, selectData }) {
   }, [userSelectData, toSelect]);
 
   const urls = useMemo(() => {
+    console.log("Select:- ", toSelect);
     return `${baseUrl}${toSelect ? "discover/" : ""}${movieType.type}${
       toSelect ? "" : movieType.gen
     }${apiKey}${toSelect ? `&with_genres=${userSelectData}` : ""}&page=`;
@@ -34,6 +35,7 @@ function TotalCards({ movieType, selectData }) {
     try {
       let response = await fetch(`${urls}${page}`);
       let responseData = await response.json();
+      console.log(urls);
       setTimeout(() => {
         if (responseData.results <= 0) {
           return setLoadMore(false);
@@ -44,7 +46,7 @@ function TotalCards({ movieType, selectData }) {
     } catch (error) {
       setError({ message: error.message, occurred: true });
     }
-  }, [userSelectData, page]);
+  }, [userSelectData, page, toSelect]);
 
   useEffect(() => {
     fetchMoreData();
@@ -71,6 +73,8 @@ function TotalCards({ movieType, selectData }) {
             setToSelect(true);
             if (e.target.value === "Select") {
               setToSelect(false);
+              setMovieData([]);
+              fetchMoreData();
             }
           }}
         />

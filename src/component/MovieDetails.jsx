@@ -24,7 +24,6 @@ function MovieDetails() {
       `https://api.themoviedb.org/3/${section}/${id}?api_key=d200b667c03f27a9799e244340744b29&language=en-US`
     );
     const responseData = await response.json();
-    console.log(responseData);
     setData(await responseData);
   };
 
@@ -92,7 +91,7 @@ function MovieDetails() {
   }, [id]);
 
   return (
-    <div className="flex justify-between min-h-[89vh] sm:pt-8 pt-[120px] relative flex-col sm:flex-row sm:items-start  items-center px-3 sm:mt-[145px]">
+    <div className="flex justify-between min-h-[89vh] sm:pt-8 relative flex-col sm:flex-row sm:items-start  items-center px-3 sm:mt-[145px]">
       <div
         className={`fixed sm:w-[50%] sm:h-[50%] w-[100%] h-[40vh] z-20 overflow-hidden right-[50%] translate-x-[50%]  sm:bottom-[50%] sm:translate-y-[50%] rounded-lg transition-all ${
           trailerWin ? "scale-100" : "scale-0"
