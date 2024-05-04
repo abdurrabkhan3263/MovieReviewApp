@@ -17,13 +17,6 @@ function TotalCards({ movieType, selectData }) {
   let baseUrl = "https://api.themoviedb.org/3/";
   let apiKey = "?api_key=d200b667c03f27a9799e244340744b29";
 
-  useEffect(() => {
-    if (toSelect) {
-      setMovieData([]);
-      fetchMoreData();
-    }
-  }, [userSelectData, toSelect]);
-
   const urls = useMemo(() => {
     console.log("Select:- ", toSelect);
     return `${baseUrl}${toSelect ? "discover/" : ""}${movieType.type}${
@@ -31,7 +24,7 @@ function TotalCards({ movieType, selectData }) {
     }${apiKey}${toSelect ? `&with_genres=${userSelectData}` : ""}&page=`;
   }, [toSelect, movieType, userSelectData]);
 
-  const fetchMoreData = useCallback(async () => {
+  const fetchMoreData = async () => {
     try {
       let response = await fetch(`${urls}${page}`);
       let responseData = await response.json();
@@ -40,18 +33,25 @@ function TotalCards({ movieType, selectData }) {
         if (responseData.results <= 0) {
           return setLoadMore(false);
         }
+        console.log(responseData.results);
         setMovieData((prev) => [...prev, ...responseData.results]);
-        setPage(page + 1);
+        setPage((prev) => prev + 1);
       }, delay);
     } catch (error) {
       setError({ message: error.message, occurred: true });
     }
-  }, [userSelectData, page, toSelect]);
+  };
 
   useEffect(() => {
-    fetchMoreData();
-    setDelay(1000);
-  }, []);
+    if (toSelect) {
+      setMovieData([]);
+      fetchMoreData();
+    } else {
+      setMovieData([]);
+      fetchMoreData();
+      setDelay(0);
+    }
+  }, [userSelectData, toSelect, urls]);
 
   if (error.occurred) {
     return (
@@ -69,12 +69,10 @@ function TotalCards({ movieType, selectData }) {
           className={"pb-4 pr-[3px] sm:pr-5"}
           onChange={(e) => {
             setPage(1);
-            setUserSelectData(e.target.value);
             setToSelect(true);
+            setUserSelectData(e.target.value);
             if (e.target.value === "Select") {
               setToSelect(false);
-              setMovieData([]);
-              fetchMoreData();
             }
           }}
         />
