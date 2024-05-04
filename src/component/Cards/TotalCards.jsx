@@ -49,7 +49,7 @@ function TotalCards({ movieType, selectData }) {
     } else {
       setMovieData([]);
       fetchMoreData();
-      setDelay(0);
+      setDelay(1000);
     }
   }, [userSelectData, toSelect, urls]);
 
